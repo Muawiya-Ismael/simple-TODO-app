@@ -14,7 +14,6 @@ class _HomePageState extends State<HomePage> {
 
   List toDoList = [
     ["make a todo app",false],
-    ['to make',false]
   ];
 
   void checkBoxChanged(bool? value, int index){
@@ -76,8 +75,8 @@ class _HomePageState extends State<HomePage> {
           return ToDoTile(
             taskName: toDoList[index][0],
             taskCompleted: toDoList[index][1],
+            deletedFunction:(context) => deleteTask(index),
             onChanged: (value)=> checkBoxChanged(value, index),
-            deletedFunction:(context)=> deleteTask,
           );
         },
       )

@@ -9,7 +9,7 @@ class ToDoTile extends StatelessWidget {
     required this.taskName,
     required this.taskCompleted,
     required this.onChanged,
-    required deletedFunction,
+    required this.deletedFunction,
   });
 
   final String taskName;
@@ -26,7 +26,7 @@ class ToDoTile extends StatelessWidget {
           motion: const StretchMotion(),
           children: [
             SlidableAction(
-              onPressed: deletedFunction,
+              onPressed:deletedFunction, // Pass context and index},
               icon: Icons.delete,
               backgroundColor: Colors.red.shade300,
               borderRadius: BorderRadius.circular(12),
