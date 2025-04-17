@@ -17,6 +17,10 @@ class ToDoTile extends StatelessWidget {
   Function(bool?)? onChanged;
   Function(BuildContext)? deletedFunction;
 
+  void onTapTial(DragEndDetails details){
+    print("object");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,36 +29,39 @@ class ToDoTile extends StatelessWidget {
         endActionPane: ActionPane(
           motion: const StretchMotion(),
           children: [
-            SlidableAction(
-              onPressed:deletedFunction, // Pass context and index},
-              icon: Icons.delete,
-              backgroundColor: Colors.red.shade300,
-              borderRadius: BorderRadius.circular(12),
-            ),
+             SlidableAction(
+                onPressed:deletedFunction, // Pass context and index},
+                icon: Icons.delete,
+                backgroundColor: Colors.red.shade300,
+                borderRadius:const BorderRadius.only(topRight:Radius.circular(12) , bottomRight: Radius.circular(12)),
+             ),
           ],
         ),
-        child: Container(
-          padding: const EdgeInsets.all(25),
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child:Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Checkbox(
-                value: taskCompleted,
-                onChanged: onChanged,
-                activeColor: Colors.black,
-              ),
-              Text(
-                taskName,
-                style: TextStyle(
-                  decoration: taskCompleted ? TextDecoration.lineThrough:TextDecoration.none,
-                  fontSize: 18,
+        child: MouseRegion(
+          onHover: (event) => onTapTial(DragEndDetails()),
+          child: Container(
+            padding: const EdgeInsets.all(25),
+            decoration:const BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.only(topLeft:Radius.circular(12) , bottomLeft: Radius.circular(12)),
+            ),
+            child:Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Checkbox(
+                  value: taskCompleted,
+                  onChanged: onChanged,
+                  activeColor: Colors.black,
                 ),
-              ),
-            ],
+                Text(
+                  taskName,
+                  style: TextStyle(
+                    decoration: taskCompleted ? TextDecoration.lineThrough:TextDecoration.none,
+                    fontSize: 18,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
