@@ -1,16 +1,47 @@
-# second_flutter_project
+# To-Do List App
 
-A new Flutter project.
+A simple to-do list application built with Flutter.
+
+## Description
+
+This is a simple to-do list application that allows you to add, delete, and mark tasks as complete. The application has a simple and intuitive user interface.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Dependencies
 
-A few resources to get you started if this is your first Flutter project:
+* Flutter
+* Dart
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Clone the repository: `git clone https://github.com/your-username/your-repository.git`
+* Install dependencies: `flutter pub get`
+
+### Executing program
+
+* Run the application: `flutter run`
+
+## Project Structure
+
+The project is structured as follows:
+
+- `lib/`: This directory contains the main source code of the application.
+  - `main.dart`: The entry point of the application.
+  - `pages/`: This directory contains the different pages of the application.
+    - `home_page.dart`: The main screen of the application, which displays the to-do list.
+  - `util/`: This directory contains the utility widgets of the application.
+    - `button.dart`: A custom button widget.
+    - `dialog_box.dart`: A dialog for adding new tasks.
+    - `to_do_app.dart`: A widget for each to-do item.
+- `test/`: This directory contains the tests for the application.
+- `pubspec.yaml`: This file contains the metadata and dependencies of the project.
+
+## Author
+
+Jules
+
+## Version History
+
+* 0.1
+    * Initial Release
